@@ -98,7 +98,7 @@
 #endif
 
 /* U64 XXH_mult32to64(U32 a, U64 b) { return (U64)a * (U64)b; } */
-#if defined(_MSC_VER) && !defined(_M_ARM64)
+#if defined(_MSC_VER) && !defined(_M_ARM64) && !defined(_M_ARM)
 #   include <intrin.h>
     /* MSVC doesn't do a good job with the mull detection. */
 #   define XXH_mult32to64 __emulu
